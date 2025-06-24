@@ -1,5 +1,4 @@
-# CO2_Intensity_Data_ETL_Pipeline
-ETL Process on Great Britain's Carbon Intensity API Data
+# ETL Process on Great Britain's CO2 Intensity API Data
 
 This repository contains a Basic Python-based Extract, Transform, Load (ETL) pipeline designed to fetch, process, and store carbon intensity data. 
 
