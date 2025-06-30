@@ -13,7 +13,7 @@ This repository contains a Basic Python-based Extract, Transform, Load (ETL) pip
 4. [Database Schema](#database-schema)
 5. [Conclusion](#conclusion)
 
-## 1. Project Overview
+## Project Overview
 This project implements a foundational ETL process to gather historical and forecasted carbon intensity data for Great Britain. The goal is to:
 
 **Extract:** Retrieve daily carbon intensity data from the API.
@@ -23,18 +23,18 @@ This project implements a foundational ETL process to gather historical and fore
 **Load:** load the transformed data into a SQLite database, organized into structured tables.
 
 
-## 2.Data Source
+## Data Source
 The primary data source is the [Official Carbon Intensity API for Great Britain](https://carbon-intensity.github.io/api-definitions/). This API provides real-time and forecasted carbon intensity data for the electricity grid in Great Britain. The _**intensity/date/{date}**_ endpoint is specifically used to retrieve intensity data for a given day.
 
 
-## 3. ETL Pipeline Details
+## ETL Pipeline Details
 The ETL process is broken down into four main functions: Data Acquisition, Data Cleaning, Data Transformation, and Data Loading.
 
 1. **Data Acquisition (Extraction)**
 
     - _verif_date_validity(date)_: A helper function to validate that a given date string is in YYYY-MM-DD format and represents a valid calendar date. It returns the formatted date or None on failure.
 
-    - _ get_co2_intensity_data(date)_: is the function responsible for extracting raw data of a specific day from , and returning it in a dataFrame ready for the next step of the pipeline. This function returns the data from 23:00 of the previous day to 23:00 of the targeted day, which makes the data not reliable to be used in analytics. For this reason we defined.  
+    - _get_co2_intensity_data(date)_: is the function responsible for extracting raw data of a specific day from , and returning it in a dataFrame ready for the next step of the pipeline. This function returns the data from 23:00 of the previous day to 23:00 of the targeted day, which makes the data not reliable to be used in analytics. For this reason we defined.  
 
     - _get_co2_intensity_data_2days(date)_: to get the data of a day and the next one.
 
@@ -56,10 +56,10 @@ The ETL process is broken down into four main functions: Data Acquisition, Data 
 
     - _load_daily_stats_to_table(data, db_path)_: filling the carbon_intensity_daily_stats with the new daily metrics created. 
 
-## 4. Database Schema
+## Database Schema
 The SQLite database (co2_intensity_db.db) is structured with the following tables:
 
 ![db_schema](media/db_schema.png)
 
-## 5. Conclusion: 
+## Conclusion: 
 This project successfully established a functional end-to-end ETL pipeline for CO2 intensity data, serving as a foundational practical experience. It allowed me to get initiated with new concepts, work directly with real-time climate-related data to gain valuable insights.
