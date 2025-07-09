@@ -63,3 +63,9 @@ The SQLite database (co2_intensity_db.db) is structured with the following table
 
 ## Conclusion: 
 This project successfully established a functional end-to-end ETL pipeline for CO2 intensity data, serving as a foundational practical experience. It allowed me to get initiated with new concepts, work directly with real-time climate-related data to gain valuable insights.
+
+## Author
+
+**Hajar A**
+* [GitHub Profile](https://github.com/Ha-neu-l)
+* [LinkedIn Profile](https://www.linkedin.com/in/hajar-a-109a22229/) 
